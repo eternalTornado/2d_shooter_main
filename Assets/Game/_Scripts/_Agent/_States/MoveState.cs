@@ -15,6 +15,9 @@ public class MoveState : BaseState
     {
         base.EnterState();
 
+        agent.agentRenderer.PlayAnimation(AnimType.Move);
+
+        //Will have to refactor this later
         currentVelocity = 0f;
     }
 

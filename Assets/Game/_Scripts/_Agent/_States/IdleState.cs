@@ -12,6 +12,8 @@ public class IdleState : BaseState
     public override void EnterState()
     {
         base.EnterState();
+
+        agent.agentRenderer.PlayAnimation(AnimType.Idle);
     }
 
     public override void OnUpdate()

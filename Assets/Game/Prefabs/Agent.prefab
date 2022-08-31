@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5166556477307099063}
   - component: {fileID: 5914001645371179789}
   - component: {fileID: 8385565228020366774}
+  - component: {fileID: 1812326312}
   m_Layer: 0
   m_Name: AgentRenderer
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb753033a52f442968cbb6fd44fe38b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1812326312}
 --- !u!212 &8385565228020366774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97,6 +99,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1812326312
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606274839240426875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fe7b58003c884755ae4a6781ef946f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3844632858167687227
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +214,7 @@ MonoBehaviour:
   agentRenderer: {fileID: 5914001645371179789}
   statsController: {fileID: 5344900446509023037}
   rb2d: {fileID: 9085616667282511784}
+  debugState: 
 --- !u!50 &9085616667282511784
 Rigidbody2D:
   serializedVersion: 4
