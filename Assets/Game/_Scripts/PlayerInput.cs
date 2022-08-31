@@ -18,8 +18,8 @@ public class PlayerInput : MonoBehaviour, IAgentInput
 
     private void HandleOnMovement()
     {
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
+        movementVector.x = Input.GetAxis("Horizontal");
+        movementVector.y = Input.GetAxis("Vertical");
         CallOnMovement(MovementVector);
     }
 

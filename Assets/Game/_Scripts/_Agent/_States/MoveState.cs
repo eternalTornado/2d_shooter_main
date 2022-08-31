@@ -22,8 +22,7 @@ public class MoveState : BaseState
     {
         base.OnUpdate();
 
-        if (agent.agentInput.MovementVector.magnitude <= 0 &&
-            agent.rb2d.velocity.magnitude < 0.1f)
+        if (agent.rb2d.velocity.magnitude < 0.1f)
             agent.TransitionToState(StateType.Idle);
     }
 
