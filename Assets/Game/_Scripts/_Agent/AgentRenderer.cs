@@ -11,10 +11,17 @@ public class AgentRenderer : MonoBehaviour
 
     public void OnMovement(Vector2 movementVector)
     {
-        if (movementVector.x > 0)
+        
+    }
+
+    public void OnMousePositionChanged(Vector2 mousePos)
+    {
+        var direction = (Vector3)mousePos - this.transform.position;
+        var result = Vector3.Cross(Vector2.up, direction);
+        if (result.z > 0)
+            this.transform.localScale = new Vector3(-1f, 1f, 1f);
+        else if (result.z < 0)
             this.transform.localScale = Vector3.one;
-        if (movementVector.x < 0)
-            this.transform.localScale = new Vector3(-1f, 1, 1);
     }
 
     public void PlayAnimation(AnimType type)
