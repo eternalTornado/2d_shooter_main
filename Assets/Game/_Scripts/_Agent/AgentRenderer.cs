@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class AgentRenderer : MonoBehaviour
 {
     [SerializeField] Animator animator;
 
     public Action OnAnimationComplete;
+    public Action OnAnimationAction;
 
     public void OnMovement(Vector2 movementVector)
     {
@@ -32,6 +34,11 @@ public class AgentRenderer : MonoBehaviour
     public void InvokeOnAnimationComplete()
     {
         OnAnimationComplete?.Invoke();
+    }
+
+    public void InvokeOnAnimationAction()
+    {
+        OnAnimationAction?.Invoke();
     }
 }
 

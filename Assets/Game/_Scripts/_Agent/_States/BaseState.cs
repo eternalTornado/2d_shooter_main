@@ -21,6 +21,9 @@ public abstract class BaseState
             agent.TransitionToState(StateType.Move);
     }
 
+    public virtual void HandleOnAnimationComplete() { }
+    public virtual void HandleOnAnimationAction() { }
+
     #region Called by Agent
 
     public virtual void OnUpdate() { }

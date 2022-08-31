@@ -25,6 +25,8 @@ public class Agent : MonoBehaviour
         stateFactory.InitState(this);
         agentInput.OnMovement += agentRenderer.OnMovement;
         agentInput.OnMovement += OnMovement;
+        agentRenderer.OnAnimationAction += OnAnimationAction;
+        agentRenderer.OnAnimationComplete += OnAnimationComplete;
 
         TransitionToState(StateType.Idle);
     }
@@ -39,9 +41,19 @@ public class Agent : MonoBehaviour
         currentState?.OnFixedUpdate();
     }
 
-    public void OnMovement(Vector2 movementVector)
+    private void OnMovement(Vector2 movementVector)
     {
         currentState?.OnMovement(movementVector);
+    }
+
+    private void OnAnimationAction()
+    {
+        currentState?.HandleOnAnimationAction();
+    }
+
+    private void OnAnimationComplete()
+    {
+        currentState?.HandleOnAnimationComplete();
     }
 
     public void TransitionToState(StateType type)
