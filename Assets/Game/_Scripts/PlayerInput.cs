@@ -28,8 +28,10 @@ public class PlayerInput : MonoBehaviour, IAgentInput
 
     private void HandleOnMousePosition()
     {
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        OnMousePositionChanged?.Invoke(mousePos);
+        var mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        var worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        OnMousePositionChanged?.Invoke(worldMousePos);
     }
 
     public void CallOnMovement(Vector2 movementVector)
