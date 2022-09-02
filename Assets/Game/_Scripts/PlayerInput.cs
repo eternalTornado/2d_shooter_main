@@ -4,19 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInput : MonoBehaviour, IAgentInput
+public class PlayerInput : BaseBrain
 {
-    public Vector2 MovementVector { get; set; }
-    public Action<Vector2> OnMovement { get; set; }
-
     public UnityEvent<Vector2> OnMousePositionChanged;
+    public UnityEvent OnMoveStateAnimationAction;
 
     private Vector2 movement;
 
-    private void Update()
+    public override void OnUpdate()
     {
         HandleOnMovement();
         HandleOnMousePosition();
+    }
+
+    public override void CallOnMovement(Vector2 movementVector)
+    {
+        MovementVector = movementVector;
+        OnMovement?.Invoke(MovementVector);
+    }
+
+    public override void MoveStateOnAnimationAction()
+    {
+        OnMoveStateAnimationAction?.Invoke();
     }
 
     private void HandleOnMovement()
@@ -32,11 +41,5 @@ public class PlayerInput : MonoBehaviour, IAgentInput
         mousePos.z = Camera.main.nearClipPlane;
         var worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
         OnMousePositionChanged?.Invoke(worldMousePos);
-    }
-
-    public void CallOnMovement(Vector2 movementVector)
-    {
-        MovementVector = movementVector;
-        OnMovement?.Invoke(MovementVector);
     }
 }

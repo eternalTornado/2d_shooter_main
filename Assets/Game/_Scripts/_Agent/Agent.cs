@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-    public IAgentInput agentInput;
+    public BaseBrain brain;
     public AgentRenderer agentRenderer;
     public AgentStatsController statsController;
     public Rigidbody2D rb2d;
@@ -16,15 +16,17 @@ public class Agent : MonoBehaviour
 
     private void Awake()
     {
-        agentInput = this.GetComponentInParent<IAgentInput>();
+        brain = this.GetComponentInParent<BaseBrain>();
         stateFactory = new StateFactory();
     }
 
     private void Start()
     {
+        brain?.OnStart();
+
         stateFactory.InitState(this);
-        agentInput.OnMovement += agentRenderer.OnMovement;
-        agentInput.OnMovement += OnMovement;
+        brain.OnMovement += agentRenderer.OnMovement;
+        brain.OnMovement += OnMovement;
         agentRenderer.OnAnimationAction += OnAnimationAction;
         agentRenderer.OnAnimationComplete += OnAnimationComplete;
 
@@ -33,6 +35,7 @@ public class Agent : MonoBehaviour
 
     private void Update()
     {
+        brain?.OnUpdate();
         currentState?.OnUpdate();
     }
 

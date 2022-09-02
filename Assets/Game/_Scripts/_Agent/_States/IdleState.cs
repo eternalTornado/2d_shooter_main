@@ -20,4 +20,10 @@ public class IdleState : BaseState
     {
         base.OnUpdate();
     }
+
+    public override void OnMovement(Vector2 movementVector)
+    {
+        if (movementVector.magnitude > 0)
+            agent.TransitionToState(StateType.Move);
+    }
 }

@@ -17,8 +17,6 @@ public abstract class BaseState
     public virtual void ExitState() { }
     public virtual void OnMovement(Vector2 movementVector)
     {
-        if (movementVector.magnitude > 0)
-            agent.TransitionToState(StateType.Move);
     }
 
     public virtual void HandleOnAnimationComplete() { }

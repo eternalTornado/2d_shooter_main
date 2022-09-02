@@ -25,7 +25,8 @@ public class MoveState : BaseState
     {
         base.OnUpdate();
 
-        if (agent.rb2d.velocity.magnitude < 0.1f)
+        if (agent.brain.MovementVector.magnitude < 0.1f && 
+            agent.rb2d.velocity.magnitude < 0.1f)
             agent.TransitionToState(StateType.Idle);
     }
 
@@ -34,12 +35,17 @@ public class MoveState : BaseState
         base.OnFixedUpdate();
 
         CalculateSpeed();
-        agent.rb2d.velocity = currentVelocity * agent.agentInput.MovementVector;
+        agent.rb2d.velocity = currentVelocity * agent.brain.MovementVector;
+    }
+
+    public override void HandleOnAnimationAction()
+    {
+        agent.brain.MoveStateOnAnimationAction();
     }
 
     private void CalculateSpeed()
     {
-        if (agent.agentInput.MovementVector.magnitude > 0)
+        if (agent.brain.MovementVector.magnitude > 0)
         {
             currentVelocity += agent.statsController.GetBaseAcceleration() * Time.deltaTime;
         }
