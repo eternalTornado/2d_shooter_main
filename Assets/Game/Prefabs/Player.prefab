@@ -86,6 +86,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 5234944166595399002, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
+      propertyPath: m_Color.b
+      value: 0.39684942
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234944166595399002, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8079769
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234944166595399002, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
     - target: {fileID: 5291445660297843766, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
       propertyPath: m_RootOrder
       value: 0
