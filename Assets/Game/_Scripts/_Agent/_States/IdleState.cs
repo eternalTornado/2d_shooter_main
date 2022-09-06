@@ -14,6 +14,7 @@ public class IdleState : BaseState
         base.EnterState();
 
         agent.agentRenderer.PlayAnimation(AnimType.Idle);
+        agent.rb2d.velocity = Vector2.zero;
     }
 
     public override void OnUpdate()

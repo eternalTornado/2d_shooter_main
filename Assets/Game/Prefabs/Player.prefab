@@ -152,6 +152,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
+--- !u!1 &2945509734504127190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 606274839240426875, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
+  m_PrefabInstance: {fileID: 2344518048640933805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9183871613298795156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945509734504127190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000007dc930871bce52ca33485af63762b0be
+  m_ShapePath:
+  - {x: -0.354808, y: -0.19036824, z: 0}
+  - {x: -0.23617142, y: 0.028906494, z: 0}
+  - {x: -0.3450654, y: 0.40225726, z: 0}
+  - {x: -0.17850351, y: 0.56512934, z: 0}
+  - {x: 0.2925829, y: 0.58068556, z: 0}
+  - {x: 0.2616296, y: 0.13780046, z: 0}
+  - {x: 0.412007, y: -0.03331864, z: 0}
+  - {x: 0.20977533, y: -0.04368949, z: 0}
+  - {x: 0.19405979, y: -0.22148085, z: 0}
+  m_ShapePathHash: -1888958844
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -32456
 --- !u!4 &7631239018820783003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5291445660297843766, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
@@ -173,7 +210,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5914001645371179789, guid: daf9ee884fce14bf1b1ca0696a9ea361, type: 3}
   m_PrefabInstance: {fileID: 2344518048640933805}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2945509734504127190}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb753033a52f442968cbb6fd44fe38b0, type: 3}

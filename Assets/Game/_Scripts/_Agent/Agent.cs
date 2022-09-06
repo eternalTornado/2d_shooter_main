@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-    public BaseBrain brain;
+    [HideInInspector] public BaseBrain brain;
     public AgentRenderer agentRenderer;
     public AgentStatsController statsController;
     public Rigidbody2D rb2d;
