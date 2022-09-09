@@ -25,8 +25,13 @@ public class AgentWeapon : MonoBehaviour
         weaponRenderer.transform.localScale = new Vector3(1f, (desiredAngle > 90 || desiredAngle < -90) ? -1 : 1, 1);
     }
 
-    public void Shoot()
+    public void OnShoot(Vector2 pointerPos)
     {
-        //weaponRenderer
+        weaponBehaviour.OnShoot(pointerPos);
+    }
+
+    public void OnStopShooting(Vector2 pointerPos)
+    {
+        weaponBehaviour.OnStopShooting(pointerPos);
     }
 }

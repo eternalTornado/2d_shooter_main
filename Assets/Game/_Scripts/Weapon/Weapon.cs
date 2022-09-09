@@ -11,6 +11,6 @@ public abstract class Weapon : MonoBehaviour
         this.weaponData = weaponData;
     }
 
-    public abstract void OnShoot();
-    public abstract void OnStopShooting();
+    public abstract void OnShoot(Vector2 pointerPos);
+    public abstract void OnStopShooting(Vector2 pointerPos);
 }

@@ -15,14 +15,14 @@ public class WeaponBehaviour : MonoBehaviour
         currentWeapon = data.GenerateWeapon();
     }
 
-    public void OnShoot()
+    public void OnShoot(Vector2 pointerPos)
     {
-        currentWeapon?.OnShoot();
+        currentWeapon?.OnShoot(pointerPos);
     }
 
-    public void OnStopShooting()
+    public void OnStopShooting(Vector2 pointerPos)
     {
-        currentWeapon?.OnStopShooting();
+        currentWeapon?.OnStopShooting(pointerPos);
     }
 
 }

@@ -8,13 +8,13 @@ public class AssaultRifle : Weapon
     {
     }
 
-    public override void OnShoot()
+    public override void OnShoot(Vector2 pointerPos)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    public override void OnStopShooting()
+    public override void OnStopShooting(Vector2 pointerPos)
     {
-        
+        throw new System.NotImplementedException();
     }
 }
